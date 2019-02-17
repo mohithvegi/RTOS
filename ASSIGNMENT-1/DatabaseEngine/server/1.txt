@@ -1,0 +1,5 @@
+Raft is a distributed consensus algorithm. It was designed to be easily understood.
+It solves the problem of getting multiple servers to agree on a shared state even
+in the face of failures. The shared state status is usually a data structure
+supported by a replicated commit log. We need the system to be fully operational
+as long as a majority of the servers are up.
