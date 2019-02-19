@@ -15,7 +15,7 @@ int main(){
     char C, C2, C3, C4, C5;
 
     // ftok to generate unique key.
-    key = ftok("client1", 65);
+    key = ftok("/home/dell/IMT2015046/8th sem/RTOS/A/ASSIGNMENT-1/EchoEngine/client1", 65);
 
     // msgget creates a message queue and returns identifier.
     message_id = msgget(key, 0666 | IPC_CREAT);
@@ -42,14 +42,14 @@ int main(){
     // to destroy the message queue
     //msgctl(message_id, IPC_RMID, NULL);
 
-    key2 = ftok("server", 65);
+    key2 = ftok("/home/dell/IMT2015046/8th sem/RTOS/A/ASSIGNMENT-1/EchoEngine/client1", 66);
     message_id2 = msgget(key2, 0666 | IPC_CREAT);
     msgsnd(message_id2, &message2, sizeof(message2), IPC_NOWAIT);
     printf("Message sent to client1.\n");
 
     // __________________________________________________________
 
-    key3 = ftok("client2", 65);
+    key3 = ftok("/home/dell/IMT2015046/8th sem/RTOS/A/ASSIGNMENT-1/EchoEngine/client2", 65);
     message_id3 = msgget(key3, 0666 | IPC_CREAT);
     // printf("%d\n", message_id3);
     msgrcv(message_id3, &message3, sizeof(message3), 2, 0);
@@ -68,14 +68,14 @@ int main(){
     message4.message_type = 2;
     printf("%c\n", message4.message_text);
 
-    key4 = ftok("server2", 65);
+    key4 = ftok("/home/dell/IMT2015046/8th sem/RTOS/A/ASSIGNMENT-1/EchoEngine/client2", 66);
     message_id4 = msgget(key4, 0666 | IPC_CREAT);
     msgsnd(message_id4, &message4, sizeof(message4), 0);
     printf("Message sent to client2.\n");
 
     // __________________________________________________________
 
-    key5 = ftok("client3", 65);
+    key5 = ftok("/home/dell/IMT2015046/8th sem/RTOS/A/ASSIGNMENT-1/EchoEngine/client3", 65);
     message_id5 = msgget(key5, 0666 | IPC_CREAT);
     // printf("%d\n", message_id5);
     msgrcv(message_id5, &message5, sizeof(message5), 3, 0);
@@ -94,14 +94,14 @@ int main(){
     message6.message_type = 3;
     printf("%c\n", message6.message_text);
 
-    key6 = ftok("server3", 65);
+    key6 = ftok("/home/dell/IMT2015046/8th sem/RTOS/A/ASSIGNMENT-1/EchoEngine/client3", 66);
     message_id6 = msgget(key6, 0666 | IPC_CREAT);
     msgsnd(message_id6, &message6, sizeof(message6), 0);
     printf("Message sent to client3.\n");
 
     // __________________________________________________________
 
-    key7 = ftok("client4", 65);
+    key7 = ftok("/home/dell/IMT2015046/8th sem/RTOS/A/ASSIGNMENT-1/EchoEngine/client4", 65);
     message_id7 = msgget(key7, 0666 | IPC_CREAT);
     // printf("%d\n", message_id7);
     msgrcv(message_id7, &message7, sizeof(message7), 4, 0);
@@ -120,14 +120,14 @@ int main(){
     message8.message_type = 4;
     printf("%c\n", message8.message_text);
 
-    key8 = ftok("server4", 65);
+    key8 = ftok("/home/dell/IMT2015046/8th sem/RTOS/A/ASSIGNMENT-1/EchoEngine/client4", 66);
     message_id8 = msgget(key8, 0666 | IPC_CREAT);
     msgsnd(message_id8, &message8, sizeof(message8), 0);
     printf("Message sent to client4.\n");
 
     // __________________________________________________________
 
-    key9 = ftok("client5", 65);
+    key9 = ftok("/home/dell/IMT2015046/8th sem/RTOS/A/ASSIGNMENT-1/EchoEngine/client5", 65);
     message_id9 = msgget(key9, 0666 | IPC_CREAT);
     // printf("%d\n", message_id9);
     msgrcv(message_id9, &message9, sizeof(message9), 5, 0);
@@ -146,7 +146,7 @@ int main(){
     message10.message_type = 5;
     printf("%c\n", message10.message_text);
 
-    key10 = ftok("server5", 65);
+    key10 = ftok("/home/dell/IMT2015046/8th sem/RTOS/A/ASSIGNMENT-1/EchoEngine/client5", 66);
     message_id10 = msgget(key10, 0666 | IPC_CREAT);
     msgsnd(message_id10, &message10, sizeof(message10), 0);
     printf("Message sent to client5.\n");
