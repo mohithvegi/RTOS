@@ -1,0 +1,1 @@
+Raft is a distributed consensus algorithm. It was designed to be easily understood.

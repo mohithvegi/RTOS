@@ -1,0 +1,1 @@
+You can upload and commit an existing file to a GitHub repository. Drag and drop a file to any directory in the file tree, or upload files from the repository's main page.
