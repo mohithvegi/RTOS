@@ -33,10 +33,13 @@ int main(){
 		exit(EXIT_FAILURE);
 	}
 
+	printf("Send the request.\n");
+	scanf("%s", s2);
+
 	while(1){
         FILE *file;
-		printf("Enter file name : ");
-		scanf("%s %s", s1, s2);
+		// printf("Enter file name : ");
+		// scanf("%s %s", s1, s2);
 		gettimeofday(&start, NULL);
 		send(clientSocket, s2, strlen(s2), 0);
 		gettimeofday(&intermediate, NULL);
